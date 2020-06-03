@@ -23,9 +23,8 @@ $(document).ready(function() {
       $('#loginbutton,#feedbutton').removeAttr('disabled');
     });
     FB.api(
-        '/me',
+        '/FullFrontalNerdityShow',
         'GET',
-        {"fields":"id,name"},
         function(response) {
             console.log(response);
         }
