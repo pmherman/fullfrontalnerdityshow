@@ -12,3 +12,22 @@ $(document).ready(function() {
         }
     });
 })
+
+$(document).ready(function() {
+    $.ajaxSetup({ cache: true });
+    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+      FB.init({
+        appId: '541957093348757',
+        version: 'v2.7'
+      });     
+      $('#loginbutton,#feedbutton').removeAttr('disabled');
+    });
+    FB.api(
+        '/me',
+        'GET',
+        {"fields":"id,name"},
+        function(response) {
+            console.log(response);
+        }
+      );
+  });
