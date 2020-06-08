@@ -26,17 +26,21 @@ $(document).ready(function() {
         'success': function(data) {
             value = data.instagram;
         }
+    }).done(function() {
+        for (var i = 0; i < value.length; i++) {
+            $.get('https://api.instagram.com/oembed?url=https://www.instagram.com/p/' + value[i], function(req, res) {
+                console.log(req)
+                if ( res === 'success') {
+                    $('#ig-feed').append(`<div id='ig-image${l}' class='col-xl-4 col-sm-12 ig-feed-box'></div>`);
+                    $('#ig-image' + l).append(`<img class='ig-thumbnail' src=${req.thumbnail_url} alt='test'><hr>`);
+                    $('#ig-image' + l).append(`<p>${req.title}</p>`)
+                    l = l + 1;
+                } else {
+                    console.warn('ERROR ACCESS DENIED')
+                } ;
+            }
+        )};
     })
-    for (var i = 0; i < value.length; i++) {
-        $('#ig-feed').append(`<div id='ig-image${i}' class='col-xl-4 col-sm-12 ig-feed-box'></div>`);
-        $.get('https://api.instagram.com/oembed?url=https://www.instagram.com/p/' + value[i], function(req, res) {
-            if ( res === 'success') {
-                $('#ig-image' + l).append(`<img class='ig-thumbnail' src=${req.thumbnail_url} alt='test'><hr>`);
-                $('#ig-image' + l).append(`<p>${req.title}</p>`)
-                l = l + 1;
-            } else {
-                console.warn('ERROR ACCESS DENIED')
-            } ;
-        }
-    )};
+    console.log(value);
+
 });
