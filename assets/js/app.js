@@ -21,7 +21,7 @@ $(document).ready(function() {
     $.ajax({
         'async': false,
         'global': false,
-        'url': '../assets/json/instagram.json',
+        'url': '/assets/json/instagram.json',
         'datatype': 'json',
         'success': function(data) {
             value = data.instagram;
