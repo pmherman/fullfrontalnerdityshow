@@ -2,31 +2,41 @@
 $(document).ready(function() {
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
-        console.log(scroll);
         if(scroll < 100){
-            $('.fixed-top').css('background', 'transparent');
             $('.fixed-top').attr('style', 'background: transparent !important');
         } else{
-            $('.fixed-top').css('background', 'blue');
             $('.fixed-top').attr('style', 'background: rgba(0,0,0,0.9) !important');
         }
     });
+
+    $('.navbar-dark > button').on('click', function(){
+        $('.navbar-dark').toggleClass('color-changed');
+    });
+
 })
 
 $(document).ready(function() {
-    $.ajaxSetup({ cache: true });
-    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
-      FB.init({
-        appId: '541957093348757',
-        version: 'v2.7'
-      });     
-      $('#loginbutton,#feedbutton').removeAttr('disabled');
-    });
-    FB.api(
-        '/FullFrontalNerdityShow',
-        'GET',
-        function(response) {
-            console.log(response);
+    let value = null;
+    let l = 0;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': '../assets/json/instagram.json',
+        'datatype': 'json',
+        'success': function(data) {
+            value = data.instagram;
         }
-      );
-  });
+    })
+    for (var i = 0; i < value.length; i++) {
+        $('#ig-feed').append(`<div id='ig-image${i}' class='col-xl-4 col-sm-12 ig-feed-box'></div>`);
+        $.get('https://api.instagram.com/oembed?url=https://www.instagram.com/p/' + value[i], function(req, res) {
+            if ( res === 'success') {
+                $('#ig-image' + l).append(`<img class='ig-thumbnail' src=${req.thumbnail_url} alt='test'><hr>`);
+                $('#ig-image' + l).append(`<p>${req.title}</p>`)
+                l = l + 1;
+            } else {
+                console.warn('ERROR ACCESS DENIED')
+            } ;
+        }
+    )};
+});

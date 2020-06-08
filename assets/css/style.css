@@ -9,6 +9,11 @@ body {
     background: transparent !important;
     margin-bottom: 25px;
 }
+
+.navbar-dark.color-changed{
+    background-color: rgba(0,0,0,0.9) !important;
+}
+
 .logo {
     position: absolute;
     top: 50%;
@@ -20,6 +25,25 @@ body {
 
 #siteDesciption {
     padding-top: 50px;
+}
+
+#fb-inline {
+    margin-top: 15px;
+}
+
+.ig-feed-box {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+}
+
+.ig-feed-box hr {
+    border-color: red;
+}
+
+.ig-thumbnail {
+    width: 400px;
+    height: 400px;
 }
 
 .fb-page {
