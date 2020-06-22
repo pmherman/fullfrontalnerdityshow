@@ -78,6 +78,20 @@ body {
     padding-top: 75px;
 }
 
+.podcast {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+    border: 1px solid white;
+}
+#podcasts {
+
+    position: relative;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 @media screen and (max-width: 500px) { 
     .carousel-item {
         height: 300px !important;

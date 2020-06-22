@@ -29,7 +29,6 @@ $(document).ready(function() {
     }).done(function() {
         for (var i = 0; i < value.length; i++) {
             $.get('https://api.instagram.com/oembed?url=https://www.instagram.com/p/' + value[i], function(req, res) {
-                console.log(req)
                 if ( res === 'success') {
                     $('#ig-feed').append(`<div id='ig-image${l}' class='col-xl-4 col-sm-12 ig-feed-box'></div>`);
                     $('#ig-image' + l).append(`<img class='ig-thumbnail' src=${req.thumbnail_url} alt='test'><hr>`);
@@ -41,6 +40,45 @@ $(document).ready(function() {
             }
         )};
     })
-    console.log(value);
+    
+    const RSS_URL = 'https://fullfrontalnerdityshow.libsyn.com/rss';
 
+    $.ajax(RSS_URL, {
+        accepts: {
+          xml: "application/rss+xml"
+        },
+      
+        dataType: "xml",
+      
+        success: function(data) {
+            console.log(data)
+          $(data)
+            .find("item")
+            .each(function() {
+              const el = $(this);
+      
+              const template = `
+                <div class='col-xl-4 podcast'>
+                    <article>
+                        <h2>
+                            <a href="${el
+                            .find("link")
+                            .text()}" target="_blank" rel="noopener">
+                            ${el.find("title").text()}
+                            </a>
+                        </h2>
+                        <h6>${el.find('pubDate').text()}</h6>
+                        <p>
+                            ${el
+                                .find('description').text()}
+                        </p>
+                    </article>
+                </div>
+              `;
+      
+              document.getElementById('podcasts').insertAdjacentHTML("beforeend", template);
+            });
+        }
+      });
+        
 });
