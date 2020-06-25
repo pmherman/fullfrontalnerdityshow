@@ -79,17 +79,21 @@ body {
 }
 
 .podcast {
+    margin-left: 30px;
+    background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     float: left;
-    border: 1px solid white;
+    border: 1px solid red;
 }
-#podcasts {
-
-    position: relative;
-    text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
+.podcasts {
+    position: relative !important;
+    text-align: left !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+#podcasts img {
+    width: 250px;
 }
 
 @media screen and (max-width: 500px) { 
