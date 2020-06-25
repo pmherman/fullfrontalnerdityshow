@@ -53,7 +53,7 @@ $(document).ready(function() {
         success: function(data) {
             const TOTAL = $(data).find('item').length;
             const SITE = document.location.href.match(/[^\/]+$/)[0];
-            console.log(SITE);
+            console.log(data);
           $(data)
             .find("item")
             .each(function(i) {
@@ -78,6 +78,7 @@ $(document).ready(function() {
                     </article>
                 </div>
               `;
+
               if ( SITE === 'podcasts.html' && i < 14) {
                 console.log(i);
                 document.getElementById('podcasts').insertAdjacentHTML("beforeend", template);

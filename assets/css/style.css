@@ -96,6 +96,26 @@ body {
     width: 250px;
 }
 
+.pagination {
+    width: 0;
+    background: black;;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.page-link {
+   color: red;
+}
+
+.page-item.active .page-link{
+    background-color: red;
+    border-color: red;
+}
+
+.page-link:hover {
+    color: darkred;
+}
+
 @media screen and (max-width: 500px) { 
     .carousel-item {
         height: 300px !important;
