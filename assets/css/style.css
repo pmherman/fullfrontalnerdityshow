@@ -10,6 +10,10 @@ body {
     margin-bottom: 25px;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 .navbar-dark.color-changed{
     background-color: rgba(0,0,0,0.9) !important;
 }
@@ -98,7 +102,6 @@ body {
 
 .pagination {
     width: 0;
-    background: black;;
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -116,7 +119,15 @@ body {
     color: darkred;
 }
 
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 1145px) { 
+    .mobile-logo {
+        display: inline;
+    }
+
+    #carouselIndicators {
+        display: none;
+    }
+
     .carousel-item {
         height: 300px !important;
     }
