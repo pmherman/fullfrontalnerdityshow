@@ -32,7 +32,10 @@ body {
 }
 
 #fb-inline {
-    margin-top: 15px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 75px;
+    height: 50px;
 }
 
 .ig-feed-box {
@@ -118,6 +121,17 @@ body {
 .page-link:hover {
     color: darkred;
 }
+
+#sponsors {
+    margin-top: 10px;
+    border-top: 1px solid darkred;
+    border-bottom: 1px solid darkred;
+}
+
+#sponsors .img-fluid {
+    width: 250px;
+}
+
 
 @media screen and (max-width: 1145px) { 
     .mobile-logo {

@@ -60,7 +60,7 @@ $(document).ready(function() {
               const el = $(this);
                 
               const template = `
-                <div class='col-xl-10 podcast'>
+                <div class='podcast'>
                     <article>
                         <h2> 
                             <a href="${el

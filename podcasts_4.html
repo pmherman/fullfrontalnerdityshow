@@ -27,7 +27,7 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link disabled" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="team.html">Team</a>
@@ -44,13 +44,16 @@
         </div>
     </nav>
     <body>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
         <div class='container-fluid' style="padding-top: 75px;">
             <div class="row">
-                <div class="col-xl-12 text-center" style="margin-bottom: 20px;">
-                    <h1>Podcasts</h1>
+                <div id="podcasts4" class="col-xl-8 text-left" style="margin-bottom: 20px;">
+                    <div class='text-center'>
+                        <h1>Podcasts</h1>
+                    </div>
                 </div>
-                <div class="row" class='podcasts' id="podcasts4">
-                    
+                <div id='fb-inline' class='col-xl-4 col-sm-12'>
+                    <div class="fb-page" data-href="https://www.facebook.com/FullFrontalNerdityShow" data-tabs="timeline, events, messages" data-width="500" data-height="1500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FullFrontalNerdityShow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FullFrontalNerdityShow">Full Frontal Nerdity</a></blockquote></div>
                 </div>
             </div>
             <nav aria-label="...">
