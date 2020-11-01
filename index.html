@@ -91,10 +91,28 @@
         </div>
     </body>
     <footer>
-        <div id='fb-like-button'>
-            <div class="fb-like" data-href="https://www.facebook.com/FullFrontalNerdityShow/" data-colorscheme="dark" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+        <div class="row">
+            <div class="col-xl-6 col-sm-12 social-media">
+                <div id='fb-like-button'>
+                    <div class="fb-like" data-href="https://www.facebook.com/FullFrontalNerdityShow/" data-colorscheme="dark" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-sm-12">
+                <h2>Contact Us</h2>
+                <form action="./assets/php/contact.php" id="contactUsForm" method="POST">
+                    <input name='email' id='contactUs' type='email' placeholder="name@domain.com" required><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <span class='form-message'></span>
+                
+            </div>
         </div>
-        <span>&copy; Copyright 2020, Full Frontal Nerdity Show. All Rights Reserved</span><br>Created by: <a href='http://paulmherman.com' target='_blank'>Paul M. Herman</a>
+        <div class="row">
+            <div class="col-12">
+                <span>&copy; Copyright 2020, Full Frontal Nerdity Show. All Rights Reserved</span><br>Created by: <a href='http://paulmherman.com' target='_blank'>Paul M. Herman</a>
+            </div>
+        </div>
+
     </footer>
     <!--====== PayPal API JS ======-->
     <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
@@ -110,7 +128,7 @@
     <script type='text/javascript' src='./assets/js/app.js'></script>
 
     <!--====== Form Submission AJAX JS ======-->
-    <!-- <script type='text/javascript' src='./assets/js/ajax-contact.js'></script> -->
+    <script type='text/javascript' src='./assets/js/contact.js'></script>
 
     <!--====== FontAwesome JS ======--><script src="https://kit.fontawesome.com/6fcab18de6.js"> </script>
 </html>

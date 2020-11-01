@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
         if(scroll < 100){
-            $('.fixed-top').attr('style', 'background: transparent !important');
+            $('.fixed-top').attr('style', 'background: transparent');
         } else{
             $('.fixed-top').attr('style', 'background: rgba(0,0,0,0.9) !important');
         }
@@ -11,6 +11,7 @@ $(document).ready(function() {
 
     $('.navbar-dark > button').on('click', function(){
         $('.navbar-dark').toggleClass('color-changed');
+        console.log('clicked');
     });
 
 })
